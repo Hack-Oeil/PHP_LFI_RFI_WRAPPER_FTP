@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  webserver-1:
+    build: server_1/
+    ports:
+      - "80:80"
+    container_name: ho-webserver
+
+  cloud:
+    build: server_2/
+    image: stilliard/pure-ftpd
+    container_name: ho-cloud
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    environment:
+      FTP_USER_NAME: "baddev"
+      FTP_USER_PASS: "trucdeOufCePassword"
+      FTP_USER_HOME: "/home/documents"
+    restart: on-failure
