@@ -1,13 +1,17 @@
 version: '3.3'
 services:
-  webserver-1:
+  webserver:
     build: server_1/
+    labels:
+      ho.ctf.cyrhades: webserver
     ports:
       - "80:80"
     container_name: ho-webserver
 
   cloud:
     build: server_2/
+    labels:
+      ho.ctf.cyrhades: cloud
     image: stilliard/pure-ftpd
     container_name: ho-cloud
     ports:
