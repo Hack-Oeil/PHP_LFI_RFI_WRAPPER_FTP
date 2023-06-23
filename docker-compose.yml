@@ -9,7 +9,6 @@ services:
     container_name: ho-webserver
 
   cloud:
-    build: server_2/
     labels:
       ho.ctf.cyrhades: cloud
     image: stilliard/pure-ftpd
