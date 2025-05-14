@@ -24,8 +24,13 @@ class HomeController extends AbstractController
         ) {
             include($page); 
         } else {
-            header("HTTP/1.0 403 Forbidden");
-            echo 'Accès non autorisé, pour ce challenge ;-)';
+            if( file_exists($page)) {
+                header("HTTP/1.1 403 Forbidden");
+                echo 'Accès non autorisé, pour ce challenge ;-)';
+            } else {
+                header("HTTP/1.1 404 Not Found");
+                echo 'Page non trouvée';
+            }
         }
     }
 }

@@ -41,7 +41,6 @@ RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} >
     && printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/conf.d/tzone.ini \
     && "date"
 
-RUN echo "allow_url_include=On" > /usr/local/etc/php/conf.d/docker-php-ftp.ini
 
 # Activer le module Apache mod_rewrite
 RUN a2enmod rewrite

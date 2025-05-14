@@ -1,6 +1,7 @@
 version: '3.9'
 services:
-  webserver:
+  webserver:    
+    container_name: webserver
     build:
       context: ./.docker/server_http
       args:
@@ -12,7 +13,15 @@ services:
     restart: always
     volumes:
       - web:/var/www/html
+    read_only: true
+    tmpfs:
+      - /var/run/apache2/
+      - /tmp
+      - /var/tmp
+      - /var/log/apache2
   ftp.hotelgrosdodo.fr:
+    container_name: ftp.hotelgrosdodo.fr
+    read_only: true
     labels:
       ho.ctf.cyrhades: "1"
     image: stilliard/pure-ftpd
@@ -20,12 +29,17 @@ services:
       FTP_USER_NAME: "baddev"
       FTP_USER_PASS: "trucdeOufCePassword"
       FTP_USER_HOME: "/home/documents"
-    restart: on-failure
+    restart: always
+    tmpfs:
+      - /home/documents
   composer:
     container_name: composer_install
     image: composer
+    labels:
+      ho.ctf.cyrhades: "1"
     volumes:
       - web:/app
     command: composer install --ignore-platform-reqs
 volumes:
   web:
+    name: web
