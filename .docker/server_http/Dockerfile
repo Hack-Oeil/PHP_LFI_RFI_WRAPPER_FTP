@@ -41,6 +41,8 @@ RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} >
     && printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/conf.d/tzone.ini \
     && "date"
 
+RUN echo "ServerName localhost" > /etc/apache2/conf-available/servername.conf && \
+    a2enconf servername
 
 # Activer le module Apache mod_rewrite
 RUN a2enmod rewrite
