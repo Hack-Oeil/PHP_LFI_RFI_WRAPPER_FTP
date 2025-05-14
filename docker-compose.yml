@@ -1,23 +1,31 @@
-version: '3.3'
+version: '3.9'
 services:
   webserver:
-    build: server_1/
+    build:
+      context: ./.docker/server_http
+      args:
+        TIMEZONE: ${TIMEZONE}
     labels:
-      ho.ctf.cyrhades: webserver
+      ho.ctf.cyrhades: "1"
     ports:
-      - "80:80"
-    container_name: ho-webserver
-
-  cloud:
+      - ${PORT}:80
+    restart: always
+    volumes:
+      - web:/var/www/html
+  ftp.hotelgrosdodo.fr:
     labels:
-      ho.ctf.cyrhades: cloud
+      ho.ctf.cyrhades: "1"
     image: stilliard/pure-ftpd
-    container_name: ho-cloud
-    ports:
-      - "21:21"
-      - "30000-30009:30000-30009"
     environment:
       FTP_USER_NAME: "baddev"
       FTP_USER_PASS: "trucdeOufCePassword"
       FTP_USER_HOME: "/home/documents"
     restart: on-failure
+  composer:
+    container_name: composer_install
+    image: composer
+    volumes:
+      - web:/app
+    command: composer install --ignore-platform-reqs
+volumes:
+  web:

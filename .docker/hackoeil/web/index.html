@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon"/>
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Namari Color CSS -->
+    <link rel="stylesheet" href="./assets/css/namari-color.css">
+    <!-- Animate CSS-->
+    <link href="./assets/css/animate.css" rel="stylesheet" type="text/css">
+    <!--Google Webfonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!--End of Preloader-->
+
+<div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+    <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
+    <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;"></div>
+    <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"></div>
+    <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"></div>
+</div>
+
+<div id="wrapper">
+    <!--Main Content Area-->
+    <main id="content">
+        <!--Ctf-->
+        <section class="ctf scrollto">
+            <div class="row clearfix">        
+                <div class="col-39">  
+                    <div class="section-heading">
+                        <h3>Challenge #1</h3>
+                        <h2 class="section-title">Remote File Inclusion / Wrapper FTP</h2>
+                        <p class="section-subtitle">
+                            Dans ce challenge vous devez récupérer le flag sur le serveur web.
+                            <br />
+                            Pour cela vous devez avoir les connaissances suivantes :
+                            <ul id="prerequisites" class="col-1">
+                                <li>Upload de fichier</li>
+                                <li>File Inclusion - LFI / RFI</li>
+                                <li>Gestionnaire de flux PHP</li>                                
+                            </ul>  
+                        </p>
+                    </div>
+                </div> 
+            </div>
+            <div class="row clearfix">        
+                <div class="col-39">  
+                    <div class="section-heading">
+                        <h3>Apprentissage</h3>
+                        <h2 class="section-title">Documentations et Vidéos</h2>
+                        <p class="section-subtitle">
+                            Connaitre la faille LFI / RFI de PHP
+                            <br />
+                            Comprendre et savoir manipuler les gestionnaires de flux de PHP
+                            <br />
+                            Créer des backdoor et reverse Shell en PHP
+                            <br />
+                            Upload de fichier, contournement
+                        </p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="row clearfix">        
+                <div class="col-39">  
+                    <div class="section-heading">
+                        <h3>Aide</h3>
+                        <h2 class="section-title">Conseils et indices</h2>
+                        <p class="section-subtitle">
+                            <a target="_blank" href="https://discord.com/channels/1175764392307077120/1176173464411979806">Fil sur le Discord</a>
+                        </p>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <!--End of Ctf-->
+    </main>
+    <!--End Main Content Area-->
+
+    <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;" title="Remonter en tête de site"></a>
+</div>
+
+<!-- Include JavaScript resources -->
+<script src="./assets/js/jquery.1.8.3.min.js"></script>
+<script src="./assets/js/wow.min.js"></script>
+<script src="./assets/js/jquery.easing.min.js"></script>
+<script src="./assets/js/jquery.stickyNavbar.min.js"></script>
+<script src="./assets/js/jquery.waypoints.min.js"></script>
+<script src="./assets/js/lightbox.js"></script>
+<script src="./assets/js/site.js"></script>
+</body>
+</html>
