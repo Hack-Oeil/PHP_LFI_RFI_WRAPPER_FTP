@@ -46,7 +46,7 @@ if(sizeof($_POST) && sizeof($_FILES)) {
 <?php if(!empty($success)) : ?>
 <div class="alert alert-success" role="success"><?= $success ?></div>
 <?php endif; ?>
-<form action="/?page=rejoindre.php" method="post" enctype="multipart/form-data">
+<form action="<?= $absoluteUrl; ?>/?page=rejoindre.php" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label class="form-label" for="lastname"><?= __("Nom") ?></label>
         <input class="form-control" type="text" name="lastname">
