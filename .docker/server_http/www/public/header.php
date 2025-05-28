@@ -1,4 +1,4 @@
-<?php $absoluteUrl = $_SERVER['HTTP_X_FORWARDED_PREFIX_PROXY'] ?? $_SERVER['HTTP_REFERER'] ?? ''; ?>
+<?php $absoluteUrl = $_SERVER['HTTP_X_FORWARDED_PREFIX_PROXY'] ?? URL_BASE ?? ''; ?>
 <!DOCTYPE HTML>
 <html lang="fr"> <!--<![endif]-->
 <head>
