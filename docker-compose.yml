@@ -21,7 +21,6 @@ services:
       - /var/log/apache2
   ftp.hotelgrosdodo.fr:
     container_name: ftp.hotelgrosdodo.fr
-    read_only: true
     labels:
       ho.ctf.cyrhades: "1"
     image: stilliard/pure-ftpd
@@ -30,8 +29,6 @@ services:
       FTP_USER_PASS: "trucdeOufCePassword"
       FTP_USER_HOME: "/home/documents"
     restart: always
-    tmpfs:
-      - /home/documents
   composer:
     container_name: composer_install
     image: composer
