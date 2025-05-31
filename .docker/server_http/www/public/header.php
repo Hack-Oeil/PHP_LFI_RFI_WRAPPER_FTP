@@ -6,7 +6,7 @@
 <title>Wrapper de CV !</title>
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold"> 
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold"> 
 <link rel="stylesheet" type="text/css" href="<?= $absoluteUrl; ?>/assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?= $absoluteUrl; ?>/assets/css/styles.css">
 </head>
