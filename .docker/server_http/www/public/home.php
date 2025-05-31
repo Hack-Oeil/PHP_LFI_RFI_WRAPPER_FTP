@@ -4,6 +4,6 @@
     <br />
     Le flag est dans le fichier <b>flag.txt</b> à la racine du site !
     <br /><br />
-    <p><a class="text-decoration-underline" href="<?= $proxyUrl; ?>/index.php?page=rejoindre.php">Nous rejoindre, envoyer votre CV ici</a></p>
+    <p><a class="text-decoration-underline" href="<?= URL_BASE; ?>/index.php?page=rejoindre.php">Nous rejoindre, envoyer votre CV ici</a></p>
 </div>
 <?php include('footer.php'); ?>
