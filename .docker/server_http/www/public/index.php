@@ -1,5 +1,7 @@
 <?php
- 
+error_reporting(0);
+ini_set('display_errors', 0);
+
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
 $host = $_SERVER['SERVER_NAME'];
 $port = $_SERVER['SERVER_PORT'];

@@ -1,6 +1,9 @@
 <?php
 if(sizeof($_POST) && sizeof($_FILES)) {
-    if(empty($_POST['lastname']) || empty($_POST['firtsname']) || !isset($_FILES['cv']) || empty($_FILES['cv']['tmp_name'])) {
+    if(empty($_POST['lastname']) || !is_string($_POST['lastname']) 
+        || empty($_POST['firtsname']) || !is_string($_POST['firtsname']) 
+        || !isset($_FILES['cv']) || empty($_FILES['cv']['tmp_name'])
+    ) {
         $error = __("Tous les champs sont obligatoires");
     }
     else {

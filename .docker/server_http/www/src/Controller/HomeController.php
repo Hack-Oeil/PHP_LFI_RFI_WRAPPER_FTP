@@ -12,8 +12,8 @@ class HomeController extends AbstractController
 {
     public function print() 
     {
-        $page = $_GET['page']??'home.php';
-        if(file_exists($page) 
+        $page = (!empty($_GET['page']) && is_string($_GET['page'])?$_GET['page'] : 'home.php');
+        if(file_exists($page) && is_file($page)
             && $page!=='index.php' 
             && $page !== __DIR__.'/index.php' 
             && $page !== __DIR__.'/flag.txt' 
@@ -24,7 +24,7 @@ class HomeController extends AbstractController
             && strpos($page, "flag.txt") === false           
         ) {
             include($page); 
-        } elseif(file_exists($page)) {
+        } elseif(file_exists($page) && is_file($page)) {
             header("HTTP/1.1 403 Forbidden");
             echo 'Accès non autorisé, pour ce challenge ;-)';
         } else {
