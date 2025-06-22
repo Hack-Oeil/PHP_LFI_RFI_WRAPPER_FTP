@@ -22,27 +22,27 @@ body {
 /* Default Link Color */
 
 a, .la-ball-triangle-path {
-    color:#3B6362;
+    color:#2C2C3D;
 }
 
 a:hover, #header.nav-solid nav a:hover {
-    color:#3B6362;
+    color:#2C2C3D;
 }
 
 /* Default Icon Color */
 
 .icon i {
-    color:#3B6362;
+    color:#2C2C3D;
 }
 
 /* Border Color */
 
 #banner .section-heading:before, .testimonial.classic footer:before {
-    background: #3B6362;
+    background: #2C2C3D;
 }
 
 .pricing-block-content:hover {
-    border-color:#3B6362;
+    border-color:#2C2C3D;
 }
 
 
@@ -68,8 +68,8 @@ a:hover, #header.nav-solid nav a:hover {
 /* Navigation Active State */
 
 #header.nav-solid .active {
-    color: #3B6362;
-    border-color: #3B6362;
+    color: #2C2C3D;
+    border-color: #2C2C3D;
 }    
 
 
@@ -82,7 +82,7 @@ a:hover, #header.nav-solid nav a:hover {
 /* Primary Background and Text Colors */
 
 .primary-color, .featured .pricing {
-    background-color:#3B6362;
+    background-color:#2C2C3D;
 }
 
 .primary-color, .primary-color .section-title, .primary-color .section-subtitle, .featured .pricing, .featured .pricing p {
@@ -90,7 +90,7 @@ a:hover, #header.nav-solid nav a:hover {
 }
 
 .section-heading h2:after {
-    background:#3B6362;
+    background:#2C2C3D;
     content:"";
     display:block;
     width:30px;
@@ -279,8 +279,8 @@ h6 {
 /* Button Hover Color */
 
 .button:hover,  input[type="submit"]:hover {
-    border-color:#3B6362;
-    color:#3B6362;
+    border-color:#2C2C3D;
+    color:#2C2C3D;
 }
 
 
@@ -306,8 +306,8 @@ h6 {
 /* Button Hover Color */
 
 #banner .button:hover {
-    color:#3B6362;
-    border-color:#3B6362;
+    color:#2C2C3D;
+    border-color:#2C2C3D;
 }
 
 
