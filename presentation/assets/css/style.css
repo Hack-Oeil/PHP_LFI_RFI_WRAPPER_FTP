@@ -2104,11 +2104,6 @@ blockquote {
         padding:0;
     }
 
-    .page-border, #scrollUp, #scrollUp:before {
-        display:none;
-    }
-
-
     .row {
         padding: 15px 0 !important;
     }
