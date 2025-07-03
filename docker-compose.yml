@@ -9,6 +9,8 @@ services:
       ho.ctf.cyrhades: "1"
     ports:
       - ${PORT}:80
+    environment:
+      - HOOS_CTF_USERNAME=${HOOS_CTF_USERNAME:-}
     restart: always
     volumes:
       - web:/var/www/html
