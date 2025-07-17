@@ -14,7 +14,7 @@ A partir de la faille LFI récupérez les informations d'authentification au ser
 
 
 ## Aperçu
-![.docker/infos/capture.jpg](.docker/infos/capture.jpg)
+![presentation/assets/images/capture.jpg](presentation/assets/images/capture.jpg)
 
 
 -----------
