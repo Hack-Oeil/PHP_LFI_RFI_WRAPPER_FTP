@@ -16,6 +16,25 @@
     <link rel="stylesheet" href="./assets/css/namari-color.css">
     <!--Google Webfonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Vérifie si la fenêtre est dans une iframe
+    if (window.self !== window.top) {
+        document.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', (event) => {
+            const a = event.target.closest('a[href^="http"]');
+            if (a) {
+            event.preventDefault();
+            window.parent.postMessage({
+                type: "open-external",
+                url: a.href
+            }, "*");
+            }
+        });
+        });
+    }
+    });
+    </script>
 </head>
 <body>
 
@@ -36,7 +55,7 @@
                             <ul id="prerequisites" class="col-1">
                                 <li>Upload de fichier</li>
                                 <li>File Inclusion - LFI / RFI</li>
-                                <li>Gestionnaire de flux PHP</li>                                
+                                <li>Comprendre et savoir manipuler les gestionnaires de flux de PHP</li>                                
                             </ul>  
                         </p>
                     </div>
@@ -47,14 +66,24 @@
                     <div class="section-heading">
                         <h3>Apprentissage</h3>
                         <h2 class="section-title">Documentations et Vidéos</h2>
-                        <p class="section-subtitle">
-                            Connaitre la faille LFI / RFI de PHP
+                        <p class="section-subtitle">                           
+                            <a target="_blank" href="https://ctfs.cyrhades.fr/ressources/LFI_RFI.pdf">
+                                <img src="./assets/images/pdf.png" />
+                                Connaitre la faille LFI / RFI de PHP
+                            </a>
                             <br />
-                            Comprendre et savoir manipuler les gestionnaires de flux de PHP
+                            <a target="_blank" href="https://www.php.net/manual/fr/wrappers.php">
+                                <img src="./assets/images/link.png" />
+                                Gestionnaire de flux PHP
+                            </a>
                             <br />
-                            Créer des backdoors et reverse Shell en PHP
+                            <a target="_blank" href="https://ctfs.cyrhades.fr/OWASP-CheatSheets/cheatsheets/File_Upload_Cheat_Sheet.html">
+                               <img src="./assets/images/link.png" />
+                               Upload de fichier, contournement
+                            </a>
+                            
                             <br />
-                            Upload de fichier, contournement
+                            Créer des backdoors (WebShell) ou reverse Shell en PHP
                         </p>
                     </div>
                 </div> 

@@ -39,3 +39,5 @@ services:
 volumes:
   web:
     name: web
+    labels:
+      ho.ctf.cyrhades: "1"
