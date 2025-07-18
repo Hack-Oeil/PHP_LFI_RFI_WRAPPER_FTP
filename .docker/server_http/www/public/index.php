@@ -10,8 +10,13 @@ $port = $_SERVER['SERVER_PORT'];
 if (($protocol === "http://" && $port != 80) || ($protocol === "https://" && $port != 443)) {
     $host .= ':' . $port;
 }
-
-define('URL_BASE', $protocol . $host);
+$proxyHttp = $_SERVER['HTTP_X_FORWARDED_PREFIX_PROXY'] ?? '';
+if (preg_match('/^[a-zA-Z0-9_-]+$/', $proxyHttp)) {
+    $baseUrl = $_SERVER['HTTP_X_FORWARDED_PREFIX_PROXY'];
+} else {
+    $baseUrl = $protocol.$host ?? '';
+}
+define('URL_BASE', $baseUrl);
 
 
 // On securise le cookie de session (PHPSESSID)
