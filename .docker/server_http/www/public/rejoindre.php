@@ -1,7 +1,7 @@
 <?php
 if(sizeof($_POST) && sizeof($_FILES)) {
     if(empty($_POST['lastname']) || !is_string($_POST['lastname']) 
-        || empty($_POST['firtsname']) || !is_string($_POST['firtsname']) 
+        || empty($_POST['firstname']) || !is_string($_POST['firstname']) 
         || !isset($_FILES['cv']) || empty($_FILES['cv']['tmp_name'])
     ) {
         $error = __("Tous les champs sont obligatoires");
@@ -49,14 +49,14 @@ if(sizeof($_POST) && sizeof($_FILES)) {
 <?php if(!empty($success)) : ?>
 <div class="alert alert-success" role="success"><?= $success ?></div>
 <?php endif; ?>
-<form action="<?= $proxyUrl; ?>/?page=rejoindre.php" method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label class="form-label" for="lastname"><?= __("Nom") ?></label>
         <input class="form-control" type="text" name="lastname">
     </div>
     <div class="mb-3">
-        <label class="form-label" for="firtsname"><?= __("Prénom") ?></label>
-        <input class="form-control" type="text" name="firtsname">
+        <label class="form-label" for="firstname"><?= __("Prénom") ?></label>
+        <input class="form-control" type="text" name="firstname">
     </div>
     <div class="mb-3">
         <label class="form-label" for="cv"><?= __("CV") ?></label>

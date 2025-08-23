@@ -6,7 +6,7 @@ use App\Entity\User;
 
 use App\Service\Level0;
 use Yoop\AbstractController;
-use App\Service\ControlLevel;
+use App\Service\HelperController;
 
 class HomeController extends AbstractController
 {
@@ -23,7 +23,16 @@ class HomeController extends AbstractController
             && md5_file($page)!=='789e1bacbfdb17d210d8938a34f2be0d'
             && strpos($page, "flag.txt") === false           
         ) {
-            include($page); 
+            $helperFlag = new HelperController();
+            ob_start();
+            include($page);
+            $content = ob_get_clean();
+            $content = str_replace(
+                "0717251325908a4ac004cc7e8be0440b37d76eed", 
+                $helperFlag->flag(null), 
+                $content
+            );
+            echo $content;
         } elseif(file_exists($page) && is_file($page)) {
             header("HTTP/1.1 403 Forbidden");
             echo 'Accès non autorisé, pour ce challenge ;-)';

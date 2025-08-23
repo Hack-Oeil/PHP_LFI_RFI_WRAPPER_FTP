@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-  webserver:    
+  webserver:
     build:
       context: ./.docker/server_http
       args:
@@ -38,6 +38,5 @@ services:
     command: composer install --ignore-platform-reqs
 volumes:
   web:
-    name: web
     labels:
       ho.ctf.cyrhades: "1"

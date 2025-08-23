@@ -6,8 +6,8 @@
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold"> 
-<link rel="stylesheet" type="text/css" href="<?= URL_BASE; ?>/assets/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<?= URL_BASE; ?>/assets/css/styles.css">
+<link rel="stylesheet" type="text/css" href="<?= URL_BASE; ?>assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?= URL_BASE; ?>assets/css/styles.css">
 </head>
 <body id="home">
 <section class="main">
@@ -16,7 +16,7 @@
 	<div class="wrapper">
 		<div class="logo">
 			<a href="<?= URL_BASE; ?>">
-				<h1><img src="<?= URL_BASE; ?>/assets/images/logo1.png" />Hotel - Le Gros Dodo</h1>
+				<h1><img src="<?= URL_BASE; ?>assets/images/logo1.png" />Hotel - Le Gros Dodo</h1>
 			</a>
 		</div>
 		</div>
