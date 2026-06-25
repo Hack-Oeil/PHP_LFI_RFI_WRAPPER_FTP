@@ -41,29 +41,42 @@ if(sizeof($_POST) && sizeof($_FILES)) {
 }
 ?>
 <?php include('header.php'); ?>
-<h3><?= __("Vous voulez nous rejoindre ?") ?></h3>
-<p><?= __("Envoyez votre candidature !") ?></p>
+<div class="text-center mb-4">
+    <h2 class="fw-bold" style="color: #2c3e50;"><?= __("Vous voulez nous rejoindre ?") ?></h2>
+    <p class="text-muted fs-5"><?= __("Envoyez votre candidature !") ?></p>
+</div>
+
 <?php if(!empty($error)) : ?>
-<div class="alert alert-danger" role="alert"><?= $error ?></div>
+<div class="alert alert-danger shadow-sm mb-4" role="alert">
+    <strong>Oops!</strong> <?= $error ?>
+</div>
 <?php endif; ?>
+
 <?php if(!empty($success)) : ?>
-<div class="alert alert-success" role="success"><?= $success ?></div>
+<div class="alert alert-success shadow-sm mb-4" role="alert">
+    <strong>Succès!</strong> <?= $success ?>
+</div>
 <?php endif; ?>
-<form method="post" enctype="multipart/form-data">
-    <div class="mb-3">
-        <label class="form-label" for="lastname"><?= __("Nom") ?></label>
-        <input class="form-control" type="text" name="lastname">
+
+<form method="post" enctype="multipart/form-data" class="mt-4">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <label class="form-label fw-bold" for="firstname" style="color: #555;"><?= __("Prénom") ?></label>
+            <input class="form-control form-control-lg" type="text" name="firstname" placeholder="<?= __("Votre prénom") ?>" required>
+        </div>
+        <div class="col-md-6 mb-4">
+            <label class="form-label fw-bold" for="lastname" style="color: #555;"><?= __("Nom") ?></label>
+            <input class="form-control form-control-lg" type="text" name="lastname" placeholder="<?= __("Votre nom") ?>" required>
+        </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label" for="firstname"><?= __("Prénom") ?></label>
-        <input class="form-control" type="text" name="firstname">
+    <div class="mb-5">
+        <label class="form-label fw-bold" for="cv" style="color: #555;"><?= __("CV") ?> (PDF)</label>
+        <input class="form-control form-control-lg" type="file" name="cv" accept="application/pdf" required style="cursor: pointer;">
     </div>
-    <div class="mb-3">
-        <label class="form-label" for="cv"><?= __("CV") ?></label>
-        <input class="form-control" type="file" name="cv" accept="application/pdf">
-    </div>
-    <div class="form-group">
-        <input class="btn btn-primary" type="submit" value="<?= __("Envoyer ma candidature") ?>">
+    <div class="text-center mt-2">
+        <button class="btn btn-primary btn-lg px-5 w-100" type="submit">
+            <span class="fw-bold"><?= __("Envoyer ma candidature") ?></span>
+        </button>
     </div>
 </form>
 <?php include('footer.php'); ?>

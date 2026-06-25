@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ar">
+    <meta charset="UTF-8">
+    <title>Hack-Oeil - مسابقات CTF من Cyrhades</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+
+<body dir="rtl">
+    <div id="wrapper">
+        <main id="content">
+            <section class="ctf scrollto">
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>التحدي #1</h3>
+                            <h2 class="section-title">Remote File Inclusion / Wrapper FTP</h2>
+                            <p class="section-subtitle">
+                                في هذا التحدي، يجب عليك استرداد العلم (flag) من خادم الويب.
+                            </p>
+                            <h4>نظرة عامة:</h4>
+                            <img class="capture" src="./assets/images/capture.jpg" alt="نظرة عامة">
+                            <br /><br />
+                            <p class="section-subtitle">
+                                للقيام بذلك، تحتاج إلى المعرفة التالية:
+                            </p>
+                            <ul id="prerequisites" class="col-1">
+                                <li>رفع الملفات (File Upload)</li>
+                                <li>تضمين الملفات - LFI / RFI</li>
+                                <li>فهم ومعالجة مغلفات تدفق PHP (stream wrappers)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>التعلم</h3>
+                            <h2 class="section-title">الوثائق ومقاطع الفيديو</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank" href="https://ctfs.cyrhades.fr/ressources/LFI_RFI.pdf">
+                                    <img src="./assets/images/pdf.png" />
+                                    فهم ثغرات LFI / RFI في PHP
+                                </a>
+                                <br />
+                                <a target="_blank" href="https://www.php.net/manual/ar/wrappers.php">
+                                    <img src="./assets/images/link.png" />
+                                    مغلفات تدفق PHP
+                                </a>
+                                <br />
+                                <a target="_blank" href="https://ctfs.cyrhades.fr/OWASP-CheatSheets/cheatsheets/File_Upload_Cheat_Sheet.html">
+                                    <img src="./assets/images/link.png" />
+                                    تجاوز رفع الملفات
+                                </a>
+                                <br />
+                                إنشاء أبواب خلفية (WebShell) أو أغلفة عكسية (reverse shell) في PHP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>المساعدة</h3>
+                            <h2 class="section-title">نصائح وتلميحات</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank" href="https://discord.com/channels/1175764392307077120/1175764601716092948">موضوع الديسكورد</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;" title="العودة إلى الأعلى"></a>
+    </div>
+</body>
+</html>

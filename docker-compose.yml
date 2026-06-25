@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   webserver:
     build:
@@ -10,7 +9,9 @@ services:
     ports:
       - ${PORT}:80
     environment:
+      - HOOS_CTF_EMAIL=${HOOS_CTF_EMAIL:-}
       - HOOS_CTF_USERNAME=${HOOS_CTF_USERNAME:-}
+      - LANGUAGE=${LANGUAGE:-fr}
     restart: always
     volumes:
       - web:/var/www/html

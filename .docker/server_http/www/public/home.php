@@ -1,9 +1,13 @@
 <?php include('header.php'); ?>
-<div class="pt-6 bg-info text-white text-center">
-    <strong class="pt-6 bg-info fw-bold text-white text-center">Envoyez votre CV on vous embauche !!!</strong>
-    <br />
-    Le flag est dans le fichier <b>flag.txt</b> à la racine du site !
-    <br /><br />
-    <p><a class="text-decoration-underline" href="<?= URL_BASE; ?>index.php?page=rejoindre.php">Nous rejoindre, envoyer votre CV ici</a></p>
+<div class="text-center">
+    <h2 class="mb-4 text-primary fw-bold"><?= __("Envoyez votre CV on vous embauche !!!") ?></h2>
+    <div class="alert alert-info d-inline-block shadow-sm">
+        <?= __("Le flag est dans le fichier <b>flag.txt</b> à la racine du site !") ?>
+    </div>
+    <div class="mt-5">
+        <a class="btn btn-primary btn-lg px-5 py-3" style="border-radius: 50px;" href="./index.php?page=rejoindre.php">
+            <?= __("Nous rejoindre, envoyer votre CV ici") ?>
+        </a>
+    </div>
 </div>
 <?php include('footer.php'); ?>

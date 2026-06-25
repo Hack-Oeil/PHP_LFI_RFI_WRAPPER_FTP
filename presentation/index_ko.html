@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>Hack-Oeil - Cyrhades CTF</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <main id="content">
+            <section class="ctf scrollto">
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>챌린지 #1</h3>
+                            <h2 class="section-title">Remote File Inclusion / Wrapper FTP</h2>
+                            <p class="section-subtitle">
+                                이 챌린지에서는 웹 서버에서 플래그를 검색해야 합니다.
+                            </p>
+                            <h4>개요:</h4>
+                            <img class="capture" src="./assets/images/capture.jpg" alt="개요">
+                            <br /><br />
+                            <p class="section-subtitle">
+                                이를 위해서는 다음 지식이 필요합니다:
+                            </p>
+                            <ul id="prerequisites" class="col-1">
+                                <li>파일 업로드</li>
+                                <li>파일 인클루전 - LFI / RFI</li>
+                                <li>PHP 스트림 래퍼 이해 및 조작</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>학습</h3>
+                            <h2 class="section-title">문서 및 비디오</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank" href="https://ctfs.cyrhades.fr/ressources/LFI_RFI.pdf">
+                                    <img src="./assets/images/pdf.png" />
+                                    PHP LFI / RFI 취약점 이해하기
+                                </a>
+                                <br />
+                                <a target="_blank" href="https://www.php.net/manual/ko/wrappers.php">
+                                    <img src="./assets/images/link.png" />
+                                    PHP 스트림 래퍼
+                                </a>
+                                <br />
+                                <a target="_blank" href="https://ctfs.cyrhades.fr/OWASP-CheatSheets/cheatsheets/File_Upload_Cheat_Sheet.html">
+                                    <img src="./assets/images/link.png" />
+                                    파일 업로드 우회
+                                </a>
+                                <br />
+                                PHP에서 백도어(WebShell) 또는 리버스 쉘 만들기
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>도움말</h3>
+                            <h2 class="section-title">팁과 단서</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank" href="https://discord.com/channels/1175764392307077120/1175764601716092948">디스코드 스레드</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;" title="위로 가기"></a>
+    </div>
+</body>
+</html>

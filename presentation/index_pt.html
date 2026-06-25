@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="pt">
+    <meta charset="UTF-8">
+    <title>Hack-Oeil - CTFs da Cyrhades</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <main id="content">
+            <section class="ctf scrollto">
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>Desafio #1</h3>
+                            <h2 class="section-title">Remote File Inclusion / Wrapper FTP</h2>
+                            <p class="section-subtitle">
+                                Neste desafio, você deve recuperar a bandeira (flag) do servidor web.
+                            </p>
+                            <h4>Visão geral:</h4>
+                            <img class="capture" src="./assets/images/capture.jpg" alt="visão geral">
+                            <br /><br />
+                            <p class="section-subtitle">
+                                Para fazer isso, você precisa dos seguintes conhecimentos:
+                            </p>
+                            <ul id="prerequisites" class="col-1">
+                                <li>Upload de Arquivos (File Upload)</li>
+                                <li>Inclusão de Arquivos - LFI / RFI</li>
+                                <li>Entender e manipular os empacotadores de fluxo (stream wrappers) do PHP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>Aprendizado</h3>
+                            <h2 class="section-title">Documentação e Vídeos</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank" href="https://ctfs.cyrhades.fr/ressources/LFI_RFI.pdf">
+                                    <img src="./assets/images/pdf.png" />
+                                    Conhecer as vulnerabilidades LFI / RFI do PHP
+                                </a>
+                                <br />
+                                <a target="_blank" href="https://www.php.net/manual/pt_BR/wrappers.php">
+                                    <img src="./assets/images/link.png" />
+                                    Empacotadores de fluxo do PHP
+                                </a>
+                                <br />
+                                <a target="_blank" href="https://ctfs.cyrhades.fr/OWASP-CheatSheets/cheatsheets/File_Upload_Cheat_Sheet.html">
+                                    <img src="./assets/images/link.png" />
+                                    Bypass de upload de arquivos
+                                </a>
+                                <br />
+                                Criar backdoors (WebShell) ou reverse shells em PHP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>Ajuda</h3>
+                            <h2 class="section-title">Dicas e pistas</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank" href="https://discord.com/channels/1175764392307077120/1175764601716092948">Tópico no Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;" title="Voltar ao topo"></a>
+    </div>
+</body>
+</html>
