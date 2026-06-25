@@ -5,7 +5,7 @@ services:
       args:
         TIMEZONE: ${TIMEZONE}
     labels:
-      ho.ctf.cyrhades: "1"
+      ho.ctf.cyrhades: "challenge"
     ports:
       - ${PORT}:80
     environment:
